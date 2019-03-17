@@ -1,5 +1,6 @@
 package Table;
 
+
 import java.util.ArrayList;
 
 /**
@@ -10,8 +11,44 @@ import java.util.ArrayList;
  * Void return on `remove`.
  */
 public class Table<K, V> {
-    private ArrayList entries;
+
+    private ArrayList<Entry<K,V>> entries;
 
     public Table() {
+        this.entries = new ArrayList<>();
+    }
+
+
+    public V get(K foo) {
+//        if(entries.contains(foo)){
+            for(Entry<K,V> entry: entries){
+                if(entry.getKey().equals(foo)){
+                    return entry.getValue();
+                }
+            }
+            return null;
+        }
+
+    public void put(K foo, V i) {
+//        V addvalue = get(foo);
+            remove(foo);
+            Entry<K, V> addvalue = new Entry<>(foo, i);
+            entries.add(addvalue);
+    }
+
+    public void remove(K foo) {
+//        if(entries.contains(foo)){
+
+            entries.remove(getEntry(foo));
+    }
+
+    public Entry getEntry(K foo) {
+//        if(entries.contains(foo)){
+        for(Entry<K,V> entry: entries){
+            if(entry.getKey().equals(foo)){
+                return entry;
+            }
+        }
+        return null;
     }
 }
