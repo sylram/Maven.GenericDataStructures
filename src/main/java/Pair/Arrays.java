@@ -11,7 +11,7 @@ import java.util.Collections;
  * And a minmax method that returns a pair containing the largest and smallest items from the array list
  */
 public class Arrays <E extends Comparable>{
-    Pair<E > pair;
+    Pair<E> pair;
 
     public static <E extends Comparable> Pair<E> firstLast(ArrayList<E> a) {
         Pair<E> pair = new Pair<E>(a.get(0),a.get(a.size()-1));

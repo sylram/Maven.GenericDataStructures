@@ -18,8 +18,8 @@ public class MapFunc<E,T> {
     }
 
 
-    public static <E> ArrayList<E> map(ArrayList<E> arrayList, Function<E,E> function){
-        ArrayList<E > newElements = new ArrayList<>();
+    public static <E,T> ArrayList<T> map(ArrayList<E> arrayList, Function<E,T> function){
+        ArrayList<T> newElements = new ArrayList<>();
         for(E e : arrayList){
             newElements.add(function.apply(e));
         }
